@@ -25,3 +25,16 @@ img {
   max-width: 100%;
   display: block;
 }
+.photo {
+  height: 500px;
+  width: auto !important;
+}
+.legend{
+  width: 500px !important; 
+}
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

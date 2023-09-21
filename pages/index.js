@@ -32,6 +32,10 @@ export default function Home({ allPostsData }) {
 							</small>
 						</li>
 					))}
+					<li className={utilStyles.listItem}>
+						<Link href="/about">About Me</Link>
+						<br />
+					</li>
 				</ul>
 			</section>
 		</Layout>
