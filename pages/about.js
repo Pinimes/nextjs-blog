@@ -6,13 +6,13 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 // Define the images to display in the slider
 const images = [
 	{
-		src: '/static/arsho_labs.jpg',
+		src: 'static/arsho_labs.jpg',
 	},
 	{
-		src: '/static/lab_work.jpg',
+		src: 'static/lab_work.jpg',
 	},
 	{
-		src: '/static/pro_picture.jpg',
+		src: 'static/pro_picture.jpg',
 	},
 ];
 
