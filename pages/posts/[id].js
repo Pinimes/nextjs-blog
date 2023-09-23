@@ -4,6 +4,7 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/date';
 import Head from 'next/head';
 import utilStyles from '../../styles/utils.module.css';
+import ReactMarkdown from 'react-markdown';
 
 export async function getStaticProps({ params }) {
 	// Add the "await" keyword like this:
@@ -35,7 +36,7 @@ export default function Post({ postData }) {
 				<div className={utilStyles.lightText}>
 					<Date dateString={postData.date} />
 				</div>
-				<div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+				<ReactMarkdown children={postData.contentHtml} />
 			</article>
 		</Layout>
 	);
