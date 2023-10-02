@@ -3,6 +3,8 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import BackToHomeBtn from './back_to_home';
+import Menu from './menu';
 
 const name = 'Peniel Mesele';
 export const siteTitle = 'Next.js Sample Website';
@@ -24,46 +26,29 @@ export default function Layout({ children, home }) {
 				/>
 				<meta name="og:title" content={siteTitle} />
 				<meta name="twitter:card" content="summary_large_image" />
+				<script
+					src="https://kit.fontawesome.com/fbadad80a0.js"
+					crossOrigin="anonymous"
+				></script>
 			</Head>
+			<Menu />
 			<header className={styles.header}>
-				{home ? (
+				{home && (
 					<>
 						<Image
 							priority
 							src="static/profile.jpg"
 							className={utilStyles.borderCircle}
-							height={144}
-							width={144}
+							height={244}
+							width={244}
 							alt=""
 						/>
 						<h1 className={utilStyles.heading2Xl}>{name}</h1>
 					</>
-				) : (
-					<>
-						<Link href="/">
-							<Image
-								priority
-								src="../static/profile.jpg"
-								className={utilStyles.borderCircle}
-								height={108}
-								width={108}
-								alt=""
-							/>
-						</Link>
-						<h2 className={utilStyles.headingLg}>
-							<Link href="/" className={utilStyles.colorInherit}>
-								{name}
-							</Link>
-						</h2>
-					</>
 				)}
 			</header>
 			<main>{children}</main>
-			{!home && (
-				<div className={styles.backToHome}>
-					<Link href="/">← Back to home</Link>
-				</div>
-			)}
+			{!home && <BackToHomeBtn />}
 		</div>
 	);
 }

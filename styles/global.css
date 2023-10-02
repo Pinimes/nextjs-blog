@@ -26,8 +26,8 @@ img {
   display: block;
 }
 .photo {
-  height: 500px;
   width: auto !important;
+  height: 300px;
 }
 .legend{
   width: 500px !important; 

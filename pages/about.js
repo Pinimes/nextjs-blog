@@ -2,6 +2,9 @@
 import Link from 'next/link';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import BackToHomeBtn from '../components/back_to_home';
+import Menu from '../components/menu';
+import Layout from '../components/layout';
 
 // Define the images to display in the slider
 const images = [
@@ -28,24 +31,24 @@ const ImageSlide = ({ src, alt }) => {
 // Create an About component that uses the Carousel component
 export default function About() {
 	return (
-		<div className="about">
-			<h1>Who is Peniel?</h1>
-			<p>
-				Hi, I am Peniel Mesele a junior software developer and Medical
-				laboratory technologist.
-			</p>
-			<p>
-				I love creating fast and beautiful websites using Next.js and other
-				modern technologies. I also love volountaring and helping people while
-				they are sick.
-			</p>
-			<p>You can find me on Facebook, GitHub, Instagram and LinkedIn.</p>
-			<Carousel autoPlay infiniteLoop showArrows>
-				{images.map((image, index) => (
-					<ImageSlide key={index} src={image.src} alt={image.alt} />
-				))}
-			</Carousel>
-			<Link href="/">Go Back to Home</Link>
-		</div>
+		<Layout>
+			<div className="about">
+				<h1>Who is Peniel?</h1>
+				<p>
+					Hi, I am Peniel Mesele a junior software developer and Medical
+					laboratory technologist.
+				</p>
+				<p>
+					I love creating fast and beautiful websites using Next.js and other
+					modern technologies. I also love volountaring and helping people while
+					they are sick.
+				</p>
+				<Carousel autoPlay infiniteLoop showArrows>
+					{images.map((image, index) => (
+						<ImageSlide key={index} src={image.src} alt={image.alt} />
+					))}
+				</Carousel>
+			</div>
+		</Layout>
 	);
 }
