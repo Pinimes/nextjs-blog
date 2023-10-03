@@ -1,23 +1,16 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
 import BackToHomeBtn from './back_to_home';
 import Menu from './menu';
 
-const name = 'Peniel Mesele';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'Peniel mesele';
 
 export default function Layout({ children, home }) {
 	return (
 		<div className={styles.container}>
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
-				<meta
-					name="description"
-					content="Learn how to build a personal website using Next.js"
-				/>
+				<meta name="description" content="my personal website" />
 				<meta
 					property="og:image"
 					content={`https://og-image.vercel.app/${encodeURI(
@@ -32,21 +25,6 @@ export default function Layout({ children, home }) {
 				></script>
 			</Head>
 			<Menu />
-			<header className={styles.header}>
-				{home && (
-					<>
-						<Image
-							priority
-							src="static/profile.jpg"
-							className={utilStyles.borderCircle}
-							height={244}
-							width={244}
-							alt=""
-						/>
-						<h1 className={utilStyles.heading2Xl}>{name}</h1>
-					</>
-				)}
-			</header>
 			<main>{children}</main>
 			{!home && <BackToHomeBtn />}
 		</div>
