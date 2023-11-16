@@ -9,13 +9,13 @@ import Layout from '../components/layout';
 // Define the images to display in the slider
 const images = [
 	{
-		src: 'static/arsho_labs.jpg',
+		src: 'images/arsho_labs.jpg',
 	},
 	{
-		src: 'static/lab_work.jpg',
+		src: 'images/lab_work.jpg',
 	},
 	{
-		src: 'static/pro_picture.jpg',
+		src: 'images/pro_picture.jpg',
 	},
 ];
 
