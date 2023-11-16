@@ -165,7 +165,7 @@ const TicTacToe = () => {
   };
 
   const handleNumberOfPlayers = (e) => {
-    if (!changeNumberOfPlayer) {
+    if (!changeNumberOfPlayer && !gameOver) {
       swal({
         title: "Are you sure?",
         text: "Do you want to restart the game",
@@ -174,12 +174,13 @@ const TicTacToe = () => {
         dangerMode: true,
       }).then((willDelete) => {
         if (willDelete) {
-          swal("Number of players is now set to " + e.target.value, {
+          swal("Number of players is now updated", {
             icon: "success",
           });
           setNumPlayers(parseInt(e.target.value));
           init(e)
         } else {
+          setNumPlayers(parseInt(e.target.value));
           swal("The game will continue as it is");
         }
       });
